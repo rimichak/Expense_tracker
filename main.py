@@ -44,7 +44,7 @@ def show_category_report(expenses_list):
     pass
 
 def exit_program():
-    pass
+    print("Exiting Program")
 
 def handle_choice(choice, expenses_list):
     pass
@@ -53,7 +53,9 @@ def main():
     pass
 
 def valid_choices(choice):
-    pass
+    return choice in ["1", "2", "3", "4"]
+
 
 def get_category_input():
-    pass
+    cat = input("Enter category name:")
+    return cat
