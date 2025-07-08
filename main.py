@@ -47,14 +47,27 @@ def exit_program():
     print("Exiting Program")
 
 def handle_choice(choice, expenses_list):
-    pass
+    if choice == '1':
+        expense = add_expense()
+        save_expense(expense,expenses_list)
+    elif choice =='2':
+        total = calculate_total(expenses_list)
+        show_total(total)
+    elif choice == '3':
+        category = get_category_input()
+        get = get_all_categories(expenses_list)
+        show_category_report(get)
+    elif choice == '4':
+        exit_program()
+    else:
+        print("invalid choice")
+
 
 def main():
     pass
 
 def valid_choices(choice):
-    return choice in ["1", "2", "3", "4"]
-
+    pass
 
 def get_category_input():
     cat = input("Enter category name:")
