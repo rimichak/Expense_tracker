@@ -68,7 +68,12 @@ def handle_choice(choice, expenses_list):
 
 
 def main():
-    pass
+    while True:
+        show_menu()
+        choice = get_user_choice()
+        if valid_choices(choice) == '4':
+            exit_program()
+        handle_choice(choice, expenses)
 
 def valid_choices(choice):
     pass
