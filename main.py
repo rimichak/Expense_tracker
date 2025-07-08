@@ -21,10 +21,10 @@ def save_expense(expense, expenses_list):
     expenses_list.append(expense)
     return(expenses_list)
 
-def calculate_total(expenses_list)
+def calculate_total(expenses_list):
     total = 0
     for expense in expenses_list:
-        total += expense
+        total += expense["amount"]
         return(total)
     
 def show_total(total):
