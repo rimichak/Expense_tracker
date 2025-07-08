@@ -35,7 +35,11 @@ def get_expenses_by_category(expenses_list, category):
     pass
 
 def show_expenses(expenses_list):
-    pass
+    for expense in expenses_list:
+        print(f"{expense['amount']}")
+        print(f"{expense['category']}")
+        print(f"{expense['description']}")
+
 
 def get_all_categories(expenses_list):
     pass
