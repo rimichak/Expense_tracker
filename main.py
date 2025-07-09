@@ -11,15 +11,15 @@ def get_user_choice():
     return choice
 
 def add_expense():
-    amount = float(input("Enter amount:"))
+    spent_amount = float(input("Enter your spent amount:"))
     category = input("Enter category:")
     description = input("Enter a short description:")
     
-    return{"amount":amount, "category":category, "description":description}
+    return {"amount":spent_amount, "category":category, "description":description}
 
 def save_expense(expense, expenses_list):
     expenses_list.append(expense)
-    return(expenses_list)
+    return (expenses_list)
 
 def calculate_total(expenses_list):
     total = 0
@@ -36,9 +36,7 @@ def get_expenses_by_category(expenses_list, category):
 
 def show_expenses(expenses_list):
     for expense in expenses_list:
-        print(f"{expense['amount']}")
-        print(f"{expense['category']}")
-        print(f"{expense['description']}")
+        print(f"Amount = {expense['amount']} \n Category = {expense['category']} \n Description = {expense['description']}")
 
 
 def get_all_categories(expenses_list):
@@ -68,12 +66,13 @@ def handle_choice(choice, expenses_list):
 
 
 def main():
+    expenses_list = []
     while True:
         show_menu()
         choice = get_user_choice()
         if valid_choices(choice) == '4':
             exit_program()
-        handle_choice(choice, expenses)
+        handle_choice(choice, expenses_list)
 
 def valid_choices(choice):
     pass
