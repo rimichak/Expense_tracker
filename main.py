@@ -25,7 +25,7 @@ def calculate_total(expenses_list):
     total = 0
     for expense in expenses_list:
         total += expense["amount"]
-        return(total)
+    return(total)
     
 def show_total(total):
 
