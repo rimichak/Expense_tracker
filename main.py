@@ -32,7 +32,7 @@ def show_total(total):
     print(f"Show the total:{total:.2f}")
 
 def get_expenses_by_category(expenses_list, category):
-    pass
+    return [expense for expense in expenses_list if expense["category"] == category]
 
 def show_expenses(expenses_list):
     for expense in expenses_list:
@@ -40,10 +40,23 @@ def show_expenses(expenses_list):
 
 
 def get_all_categories(expenses_list):
-    pass
+    unique =[]
+    for expense in expenses_list:
+        cat = expense["category"]
+        if cat not in unique:
+            unique.append(cat)
+    return (unique)
 
 def show_category_report(expenses_list):
-    pass
+    category = get_category_input()
+    matched = get_expenses_by_category(expenses_list, category)
+    total = 0
+    for exp in expenses_list:
+        if exp["category"] == category:
+            print(f"{exp["description"]}: \n {exp["amount"]:.2f}")
+            total += exp["amount"]
+    print(f"total for '{category}', {total:.2f}")
+
 
 def exit_program():
     print("Exiting Program")
@@ -75,7 +88,8 @@ def main():
         handle_choice(choice, expenses_list)
 
 def valid_choices(choice):
-    pass
+    if choice in ["1", "2", "3", "4"]:
+        return choice
 
 def get_category_input():
     cat = input("Enter category name:")
